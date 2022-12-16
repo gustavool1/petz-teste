@@ -23,13 +23,15 @@ Desenvolver um web app em Typescript, a partir deste projeto nextjs, que impleme
 
 ### Requisitos
 - Criar um código desacoplado, organizado e testável
-- Escrever testes unitários
+- Escrever testes unitários com jest e react-testing-library
 - Demonstrar conhecimento do uso de hooks
 - Demonstrar conhecimento de modularização de componentes
 - Utilizar CSS ou Sass para estilizar as páginas
 - Demonstrar organização, desacoplamento e separação de responsabilidades no código; o uso de padrões arquiteturais como MVVM, CLEAN, etc., é bem-vindo
 - Demonstrar conhecimento de TypeScript e suas features para organizar o projeto
 - Tratar possíveis erros de API
+
+Configurar as bibliotecas e o projeto para fazer os testes unitários também é parte do desafio.
 
 ### Uso de APIs
 - Usar `http://localhost:3000/api/scheduling/date` para puxar as datas disponíveis para agendamento

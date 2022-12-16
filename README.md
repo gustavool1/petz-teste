@@ -41,7 +41,7 @@ Configurar as bibliotecas e o projeto para fazer os testes unitários também é
 Entender o contrato das APIs é também parte do teste.
 
 ### Entrega
-Responda o e-mail do teste com o link para o repositório público onde você armazenar seu código.
+O prazo para entrega é de **07 dias**. Responda o e-mail do teste com o link para o repositório público onde você armazenar seu código.
 
 ## Design a Ser Implementado
 O site deve implementar o design descrito nas telas abaixo. Todas as imagens necessárias estão na pasta `./public/images`.

@@ -13,4 +13,5 @@ export const Title = styled.h2`
   font-size: 14px;
   color: white;
   font-weight: 400;
+  padding: 0 20px;
 `

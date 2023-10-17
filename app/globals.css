@@ -2,17 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
+:root {
+  --color-primary:#E40F0F;
+  --color-secondary:#1D1D1D;
+  }
 
 body {
-  color: rgb(var(--foreground-rgb));
   font-size: 17px;
   padding: 0px;
   margin: 0px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {  
   margin: 0px;
 }

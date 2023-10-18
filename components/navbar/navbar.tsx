@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Button from '../button/button'
+
 import {
   Container,
   ButtonTextPokemonCenter,
@@ -10,6 +10,7 @@ import {
 } from './style'
 
 import { useRouter } from 'next/navigation'
+import { ButtonPrimary } from '../components'
 
 const NavBar = () => {
   const router = useRouter()
@@ -17,17 +18,17 @@ const NavBar = () => {
   return (
     <Container>
       <CentralPokemonContainer>
-        <Button hasIcon onClick={() => {}}>
+        <ButtonPrimary hasIcon onClick={() => {}}>
           <ButtonTextPokemonCenter>Centro Pokémon</ButtonTextPokemonCenter>
-        </Button>
+        </ButtonPrimary>
       </CentralPokemonContainer>
       <InfoContainer>
         <WhoWeAre onClick={() => router.push('/about')}>Quem Somos</WhoWeAre>
-        <Button>
+        <ButtonPrimary>
           <ButtonTextSchedule onClick={() => router.push('/schedule')}>
             Agendar Consulta
           </ButtonTextSchedule>
-        </Button>
+        </ButtonPrimary>
       </InfoContainer>
     </Container>
   )

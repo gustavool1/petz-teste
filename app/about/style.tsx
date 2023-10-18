@@ -9,6 +9,7 @@ export const MessageContainer = styled.div`
   flex-direction: column;
   margin: 0 auto;
   margin-top: 20px;
+  padding: 20px;
 `
 export const PokemonCenterHeader = styled.h1`
   font-size: 18px;

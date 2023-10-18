@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ButtonHTMLAttributes } from 'react'
-import { ButtonContainer } from './style'
+import { ButtonContainer, ChildrenContainer, ImageContainer } from './style'
 import Image from 'next/image'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -27,20 +27,23 @@ const Button = ({ children, hasIcon, ...rest }: ButtonProps) => {
   return (
     <ButtonContainer>
       {hasIcon && (
-        <Image
-          alt="Background Image"
-          src="/images/white-pokeball.svg"
-          width={0}
-          height={0}
-          sizes="20vw"
-          style={{
-            width: '37px',
-            height: '34px',
-            marginRight: textVisible ? '10px' : '0px',
-          }}
-        />
+        <ImageContainer textVisible={textVisible}>
+          <Image
+            alt="Background Image"
+            src="/images/white-pokeball.svg"
+            width={0}
+            height={0}
+            sizes="20vw"
+            style={{
+              width: '37px',
+              height: '34px',
+            }}
+          />
+        </ImageContainer>
       )}
-      {textVisible && <span>{children}</span>}
+      {textVisible && (
+        <ChildrenContainer shouldShow={!hasIcon}>{children}</ChildrenContainer>
+      )}
     </ButtonContainer>
   )
 }

@@ -10,7 +10,11 @@ export const Container = styled.div`
 `
 export const CentralPokemonContainer = styled.div`
   width: 50%;
-  margin-left: 65px;
+  margin-left: 3%;
+
+  @media (max-width: 768px) {
+    margin-left: 2%;
+  }
 `
 export const ButtonTextPokemonCenter = styled.h2`
   font-size: 20;
@@ -27,10 +31,14 @@ export const ButtonTextSchedule = styled.h2`
 export const InfoContainer = styled.div`
   width: 50%;
   display: flex;
-  margin-right: 65px;
+  margin-right: 3%;
   display: flex;
   justify-content: end;
   align-items: center;
+
+  @media (max-width: 768px) {
+    margin-right: 2%;
+  }
 `
 export const WhoWeAre = styled.button`
   font-size: 14px;

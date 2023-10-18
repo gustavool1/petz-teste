@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import styled from 'styled-components'
 
 export const ButtonContainer = styled.button`
@@ -11,6 +12,17 @@ export const ButtonContainer = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  transtion: 2s;
 `
-export const ChildrenContainer = styled.span``
+
+export const ChildrenContainer = styled.span<{ shouldShow: boolean }>`
+  @media (max-width: 768px) {
+    display: ${(props) => (props.shouldShow ? 'inline' : 'none')};
+  }
+`
+export const ImageContainer = styled.div<{ textVisible: boolean }>`
+  margin-right: ${(props) => (props.textVisible ? '10px' : '0px')};
+
+  @media (max-width: 768px) {
+    margin-right: 0px;
+  }
+`

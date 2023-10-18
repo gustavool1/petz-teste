@@ -7,7 +7,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   hasIcon?: boolean
 }
 
-const Button = ({ children, hasIcon, ...rest }: ButtonProps) => {
+const ButtonPrimary = ({ children, hasIcon, ...rest }: ButtonProps) => {
   const [textVisible, setTextVisible] = useState(false)
 
   useEffect(() => {
@@ -48,4 +48,4 @@ const Button = ({ children, hasIcon, ...rest }: ButtonProps) => {
   )
 }
 
-export default Button
+export default ButtonPrimary

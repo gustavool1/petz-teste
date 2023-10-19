@@ -4,10 +4,6 @@ export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  padding-left: 45px;
-  @media screen and (max-width: 768px) {
-    padding-left: 0px;
-  }
 `
 export const UserInfoContainer = styled.div`
   display: flex;

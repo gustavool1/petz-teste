@@ -59,3 +59,7 @@ const Label = styled.p`
   font-size: 12px;
   font-weight: 700;
 `
+export const ErrorLabel = styled.p`
+  font-size: 12px;
+  color: red;
+`

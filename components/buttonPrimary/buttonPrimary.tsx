@@ -25,7 +25,7 @@ const ButtonPrimary = ({ children, hasIcon, ...rest }: ButtonProps) => {
   }, [])
 
   return (
-    <ButtonContainer>
+    <ButtonContainer {...rest}>
       {hasIcon && (
         <ImageContainer textVisible={textVisible}>
           <Image

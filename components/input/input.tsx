@@ -1,18 +1,20 @@
 import React, { InputHTMLAttributes, forwardRef } from 'react'
-import { Container, Label, TextField } from './style'
+import { Container, ErrorLabel, Label, TextField } from './style'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string
   placeholder?: string
   margin?: string
+  error?: string
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ label, placeholder, margin, ...rest }, ref) => {
+  ({ label, placeholder, error, margin, ...rest }, ref) => {
     return (
       <Container style={{ margin: margin }}>
         <Label>{label}</Label>
         <TextField {...rest} placeholder={placeholder} ref={ref} />
+        {error && <ErrorLabel>{error}</ErrorLabel>}
       </Container>
     )
   }

@@ -12,17 +12,14 @@ export const ButtonContainer = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid black;
 `
 
-export const ChildrenContainer = styled.span<{ shouldShow: boolean }>`
-  @media (max-width: 768px) {
-    display: ${(props) => (props.shouldShow ? 'inline' : 'none')};
-  }
-`
-export const ImageContainer = styled.div<{ textVisible: boolean }>`
-  margin-right: ${(props) => (props.textVisible ? '10px' : '0px')};
+export const ChildrenContainer = styled.span``
+export const ImageContainer = styled.div`
+  margin-left: '10px';
 
   @media (max-width: 768px) {
-    margin-right: 0px;
+    margin-left: 0px;
   }
 `

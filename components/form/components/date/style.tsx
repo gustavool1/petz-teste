@@ -2,8 +2,9 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
+  margin-top: 20px;
 `
-export const Location = styled.div`
+export const Dates = styled.div`
   display: flex;
   margin-top: 15px;
   width: 100%;
@@ -12,11 +13,11 @@ export const Location = styled.div`
     flex-direction: column;
   }
 `
-export const RegionContainer = styled.div`
+export const DayContainer = styled.div`
   width: 100%;
   margin-right: 70px;
 `
 
-export const CityContainer = styled.div`
+export const TimeContainer = styled.div`
   width: 100%;
 `

@@ -1,11 +1,19 @@
-import React, { SelectHTMLAttributes, useState, forwardRef, Ref } from 'react' // Import forwardRef and Ref
-import { ArrowContainer, SelectContainer, Option, SelectBox } from './style'
+import React, { SelectHTMLAttributes, useState, forwardRef, Ref } from 'react'
+import {
+  ArrowContainer,
+  SelectContainer,
+  Option,
+  SelectBox,
+  ErrorLabel,
+} from './style'
 import Image from 'next/image'
 import { Label } from '../input/style'
 
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   label?: string
   placeholder?: string
+  options: string[]
+  error?: string
 }
 
 const SelectInput = forwardRef(
@@ -15,6 +23,7 @@ const SelectInput = forwardRef(
     const toggleIsOpen = () => {
       setIsOpen(!isOpen)
     }
+
     return (
       <>
         {props.label && <Label>{props.label}</Label>}
@@ -31,10 +40,10 @@ const SelectInput = forwardRef(
                 {props.placeholder}
               </Option>
             )}
-            <Option value="volvo">Volvo</Option>
-            <Option value="saab">Saab</Option>
-            <Option value="opel">Opel</Option>
-            <Option value="audi">Audi</Option>
+            {props.options &&
+              props.options.map((option: string) => (
+                <Option value={option.toLowerCase()}>{option}</Option>
+              ))}
           </SelectBox>
           <ArrowContainer isOpen={isOpen}>
             <Image
@@ -45,9 +54,12 @@ const SelectInput = forwardRef(
             />
           </ArrowContainer>
         </SelectContainer>
+        {props.error && <ErrorLabel>{props.error}</ErrorLabel>}{' '}
       </>
     )
   }
 )
 
 export default SelectInput
+
+// The rest of your styled components...

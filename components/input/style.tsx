@@ -36,3 +36,9 @@ export const TextField = styled.input`
     font-weight: 500;
   }
 `
+
+export const ErrorLabel = styled.p`
+  font-size: 12px;
+  margin-bottom: 6px;
+  color: red; /* Add red color for errors */
+`

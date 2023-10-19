@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes } from 'react'
+import React, { InputHTMLAttributes, forwardRef } from 'react'
 import { Container, Label, TextField } from './style'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -7,13 +7,15 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   margin?: string
 }
 
-const Input = ({ label, placeholder, margin, ...rest }: InputProps) => {
-  return (
-    <Container style={{ margin: margin }}>
-      <Label>{label}</Label>
-      <TextField {...rest} placeholder={placeholder} />
-    </Container>
-  )
-}
+const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ label, placeholder, margin, ...rest }, ref) => {
+    return (
+      <Container style={{ margin: margin }}>
+        <Label>{label}</Label>
+        <TextField {...rest} placeholder={placeholder} ref={ref} />
+      </Container>
+    )
+  }
+)
 
 export default Input

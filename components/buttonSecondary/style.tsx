@@ -13,6 +13,11 @@ export const ButtonContainer = styled.button`
   align-items: center;
   justify-content: center;
   border: 1px solid black;
+
+  &:disabled {
+    background-color: #d7d9d8;
+    cursor: not-allowed;
+  }
 `
 
 export const ChildrenContainer = styled.span``

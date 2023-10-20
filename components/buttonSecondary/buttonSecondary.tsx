@@ -1,9 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  ButtonHTMLAttributes,
-  ReactNode,
-} from 'react'
+import React, { ButtonHTMLAttributes, ReactNode } from 'react'
 import { ButtonContainer, ChildrenContainer, ImageContainer } from './style'
 import Image from 'next/image'
 

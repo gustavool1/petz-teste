@@ -24,10 +24,8 @@ const NavBar = () => {
       </CentralPokemonContainer>
       <InfoContainer>
         <WhoWeAre onClick={() => router.push('/about')}>Quem Somos</WhoWeAre>
-        <ButtonPrimary>
-          <ButtonTextSchedule onClick={() => router.push('/schedule')}>
-            Agendar Consulta
-          </ButtonTextSchedule>
+        <ButtonPrimary onClick={() => router.push('/schedule')}>
+          <ButtonTextSchedule>Agendar Consulta</ButtonTextSchedule>
         </ButtonPrimary>
       </InfoContainer>
     </Container>

@@ -36,7 +36,7 @@ const ButtonPrimary = ({ children, hasIcon, ...rest }: ButtonProps) => {
       {hasIcon && (
         <ImageContainer textVisible={textVisible}>
           <Image
-            alt="Background Image"
+            alt="White pokeball"
             src="/images/white-pokeball.svg"
             width={0}
             height={0}

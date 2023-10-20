@@ -7,6 +7,7 @@ import {
   Input,
   SelectInput,
   Form,
+  Footer,
 } from '../../components/components'
 
 const SchedulePage = () => {
@@ -15,6 +16,7 @@ const SchedulePage = () => {
       <NavBar />
       <NavigationHeader />
       <Form />
+      <Footer />
     </>
   )
 }

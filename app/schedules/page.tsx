@@ -9,9 +9,7 @@ const Schedules = () => {
     <>
       <NavBar />
       <NavigationHeader />
-      <div style={{ margin: '20px' }}>
-        <Modal type={ModalType.error} day="" pokemonQuantity="2" time="" />
-      </div>
+      <div style={{ margin: '20px' }}></div>
     </>
   )
 }

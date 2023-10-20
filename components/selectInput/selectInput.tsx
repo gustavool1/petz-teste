@@ -28,21 +28,17 @@ const SelectInput = forwardRef(
       <>
         {props.label && <Label>{props.label}</Label>}
         <SelectContainer>
-          <SelectBox
-            name="cars"
-            id="cars"
-            {...props}
-            onClick={toggleIsOpen}
-            ref={ref}
-          >
+          <SelectBox {...props} onClick={toggleIsOpen} ref={ref}>
             {props.placeholder && (
               <Option disabled selected value="">
                 {props.placeholder}
               </Option>
             )}
             {props.options &&
-              props.options.map((option: string) => (
-                <Option value={option.toLowerCase()}>{option}</Option>
+              props.options.map((option: string, index: number) => (
+                <Option key={index} value={option.toLowerCase()}>
+                  {option}
+                </Option>
               ))}
           </SelectBox>
           <ArrowContainer isOpen={isOpen}>

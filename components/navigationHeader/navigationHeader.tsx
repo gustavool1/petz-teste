@@ -23,7 +23,6 @@ const NavigationHeader = () => {
 
     setPathArray(paths)
   }, [])
-  // /home/klasdkl
 
   return (
     <Container>
@@ -31,12 +30,14 @@ const NavigationHeader = () => {
         <PageRoute>Home</PageRoute>
         <Arrow>{'>'}</Arrow>
         {pathArray.map((path, index) => (
-          <>
+          <React.Fragment key={index + path}>
             <PageRoute>
               {pagesInfos.find((pageInfo) => pageInfo.path == path)?.title}
             </PageRoute>
-            {index < pathArray.length - 2 && <Arrow>{'>'}</Arrow>}
-          </>
+            {index < pathArray.length - 2 && (
+              <Arrow key={path + index}>{'>'}</Arrow>
+            )}
+          </React.Fragment>
         ))}
       </RoutesContainer>
       <Title>{currentPageInfo?.title}</Title>

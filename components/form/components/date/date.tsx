@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { TimeContainer, Container, DayContainer, Dates } from './style'
 import { SelectInput } from '../../../components'
-import { UseFormRegister } from 'react-hook-form'
+import { FieldErrors, UseFormRegister } from 'react-hook-form'
 import { getDates, sendTimes } from '../../../../helpers/scheduling'
 
 interface DateProps {

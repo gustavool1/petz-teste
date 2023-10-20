@@ -10,32 +10,39 @@ import {
 } from './style'
 import { ButtonPrimary } from '../../../components'
 
-const FinancialResume = () => {
+interface FinancialResumeProps {
+  pokemonTeam: number
+}
+
+const FinancialResume = ({ pokemonTeam }: FinancialResumeProps) => {
+  const tax = 2.1
   return (
     <Container>
       <Hr />
       <PricesContainer>
         <ItemDescription>Número de pokémons a serem atendidos:</ItemDescription>
-        <ItemDescription>01</ItemDescription>
+        <ItemDescription>0{pokemonTeam}</ItemDescription>
       </PricesContainer>
       <PricesContainer>
         <ItemDescription>Atendimento unitário por pokémon: </ItemDescription>
-        <ItemDescription>R$ 70,00</ItemDescription>
+        <ItemDescription>R$ {(pokemonTeam * 70).toFixed(2)}</ItemDescription>
       </PricesContainer>
       <PricesContainer>
         <ItemDescription>Subtotal:</ItemDescription>
-        <ItemDescription>R$ 70,00</ItemDescription>
+        <ItemDescription>R$ {(pokemonTeam * 70).toFixed(2)}</ItemDescription>
       </PricesContainer>
       <PricesContainer>
         <ItemDescription>Taxa geracional*: </ItemDescription>
-        <ItemDescription>R$ 2,10</ItemDescription>
+        <ItemDescription>R$ {tax.toFixed(2)}</ItemDescription>
       </PricesContainer>
       <SmallNote>
         *adicionamos uma taxa de 3%, multiplicado pelo número da geração mais
         alta do time, com limite de até 30%
       </SmallNote>
       <PricesContainer>
-        <TotalValueLabel>Valor Total: R$ 72,10</TotalValueLabel>
+        <TotalValueLabel>
+          Valor Total: R$ {(pokemonTeam * 70 + tax).toFixed(2)}
+        </TotalValueLabel>
         <ButtonPrimary type="submit">
           <ButtonConclusion>Agendar Consulta</ButtonConclusion>
         </ButtonPrimary>

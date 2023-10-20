@@ -1,9 +1,14 @@
-import React, { useState, useEffect, ButtonHTMLAttributes } from 'react'
+import React, {
+  useState,
+  useEffect,
+  ButtonHTMLAttributes,
+  ReactNode,
+} from 'react'
 import { ButtonContainer, ChildrenContainer, ImageContainer } from './style'
 import Image from 'next/image'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: any
+  children: ReactNode
   hasIcon?: boolean
 }
 

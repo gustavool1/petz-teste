@@ -5,6 +5,7 @@ import NavBar from './navbar/navbar'
 import NavigationHeader from './navigationHeader/navigationHeader'
 import SelectInput from './selectInput/selectInput'
 import Form from './form/form'
+import Modal from './modal/modal'
 
 export {
   NavBar,
@@ -14,4 +15,5 @@ export {
   Input,
   SelectInput,
   Form,
+  Modal,
 }

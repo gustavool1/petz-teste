@@ -32,5 +32,7 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "types": ["jest"],
+  "typeRoots": ["./src/types", "node_modules/@types"],
 }

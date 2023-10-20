@@ -21,7 +21,7 @@ export const NameContainer = styled.div`
   width: 100%;
 
   @media screen and (min-width: 768px) {
-    margin-right: 25px;
+    margin-right: 75px;
   }
 `
 

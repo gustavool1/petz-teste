@@ -7,7 +7,7 @@ export const Container = styled.div`
 `
 export const Label = styled.p`
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 400;
 `
 
 export const TextField = styled.input`

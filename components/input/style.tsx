@@ -26,7 +26,7 @@ export const TextField = styled.input`
     border-color: red;
   }
   @media screen and (min-width: 768px) {
-    max-width: 265px;
+    max-width: 268px;
   }
 
   &::placeholder {

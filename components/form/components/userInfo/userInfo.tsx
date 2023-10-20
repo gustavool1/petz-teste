@@ -8,7 +8,6 @@ import {
 import { Input } from '../../../components'
 import { useSchedule } from '../../../../hooks/schedule'
 import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form'
-import { error } from 'console'
 interface UserInfoProps {
   register: UseFormRegister<any>
   errors: FieldErrors

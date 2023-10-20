@@ -1,4 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { headers } from 'next/headers'
+import { NextResponse } from 'next/server'
 
 type DateResponse = Array<string>
 
@@ -20,5 +22,11 @@ export function GET(req: Request) {
     dateStringArray.push(date.toLocaleDateString())
   })
 
-  return Response.json(dateStringArray)
+  return NextResponse.json(dateStringArray, {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    },
+  })
 }

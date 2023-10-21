@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
-import Modal, { ModalType } from '../../../components/modal/modal' // Adjust the import path to match your file structure
+import Modal, { ModalType } from '../../../components/modal/modal'
 
 describe('Modal', () => {
   it('Renderiza um modal de erro corretamente', () => {

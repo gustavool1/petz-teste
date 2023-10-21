@@ -57,5 +57,3 @@ const SelectInput = forwardRef(
 )
 
 export default SelectInput
-
-// The rest of your styled components...

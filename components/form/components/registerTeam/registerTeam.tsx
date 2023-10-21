@@ -32,6 +32,7 @@ const RegisterTeam = ({
             options={pokemonsList}
             placeholder="Selecione seu pokémon"
             {...register(`pokemons[${i}]`)}
+            id={`pokemon-register-${i + 1}`}
             // error={errors.pokemons[i]?.message as unknown as string}
           />
         </PokemonSelectContainer>

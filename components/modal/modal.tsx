@@ -19,7 +19,7 @@ interface ModalProps {
   day?: string
   time?: string
   pokemonQuantity?: string
-  setIsShowingModal: any
+  setIsShowingModal: () => void
 }
 
 const Modal = ({
@@ -54,12 +54,12 @@ const Modal = ({
           style={{ marginTop: 20 }}
         />
         {isSuccessModal ? (
-          <Message>
+          <Message className="success-modal-message">
             Seu agendamento para dia {day ?? ''}, às {time ?? ''}, para{' '}
             {pokemonQuantity} pokémons foi realizado com sucesso!
           </Message>
         ) : (
-          <Message>Ocoreu um erro</Message>
+          <Message className="error-modal-message">Ocoreu um erro</Message>
         )}
 
         <ButtonPrimary onClick={handleButtonClicked}>

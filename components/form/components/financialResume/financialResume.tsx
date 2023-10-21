@@ -43,8 +43,8 @@ const FinancialResume = ({ pokemonTeam }: FinancialResumeProps) => {
         <TotalValueLabel>
           Valor Total: R$ {(pokemonTeam * 70 + tax).toFixed(2)}
         </TotalValueLabel>
-        <ButtonPrimary type="submit">
-          <ButtonConclusion>Agendar Consulta</ButtonConclusion>
+        <ButtonPrimary className="submit-button" type="submit">
+          <ButtonConclusion>Concluir Agendamento</ButtonConclusion>
         </ButtonPrimary>
       </PricesContainer>
     </Container>

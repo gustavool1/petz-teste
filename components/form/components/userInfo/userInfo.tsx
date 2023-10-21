@@ -21,6 +21,7 @@ const UserInfo = ({ register, errors }: UserInfoProps) => {
           <Input
             label="Nome"
             placeholder="Digite seu nome"
+            id="name-input"
             {...register('name')}
             error={errors.name?.message as string}
           />
@@ -30,6 +31,7 @@ const UserInfo = ({ register, errors }: UserInfoProps) => {
             label="Sobrenome"
             placeholder="Digite seu sobrenome"
             error={errors.surname?.message as string}
+            id="surname-input"
             {...register('surname')}
           />
         </SurnameContainer>

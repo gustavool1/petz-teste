@@ -27,6 +27,7 @@ const LocationInfo = ({ register, errors }: LocationInfoProps) => {
             {...register('region')}
             options={region}
             error={errors.region?.message as string}
+            id="region-input"
           />
         </RegionContainer>
         <CityContainer>
@@ -36,6 +37,7 @@ const LocationInfo = ({ register, errors }: LocationInfoProps) => {
             {...register('city')}
             options={cities}
             error={errors.city?.message as string}
+            id="city-input"
           />
         </CityContainer>
       </Location>

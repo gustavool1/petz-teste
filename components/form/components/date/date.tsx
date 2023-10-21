@@ -26,6 +26,7 @@ const Date = ({ register, errors }: DateProps) => {
             label="Data para Atendimento"
             placeholder="Selecione uma data"
             options={dates}
+            id="date-input"
             {...register('date')}
             error={errors.date?.message as string}
           />
@@ -33,8 +34,9 @@ const Date = ({ register, errors }: DateProps) => {
         <TimeContainer>
           <SelectInput
             options={times}
-            label="Selecione um horário"
+            label="Horário de Atendimento"
             placeholder="Selecione um horário"
+            id="times-input"
             {...register('time')}
             error={errors.time?.message as string}
           />

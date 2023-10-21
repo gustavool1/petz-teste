@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { ModalType } from '../components/modal/modal'
 import { ModalInfos } from '../components/form/form'
 
-interface FormData {
+export interface FormData {
   name?: string
   surname?: string
   region?: string

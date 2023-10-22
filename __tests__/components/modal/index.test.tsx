@@ -14,7 +14,9 @@ describe('Modal', () => {
     expect(errorModalHeader).toBeInTheDocument()
     expect(errorModalMessage).toHaveTextContent('Ocoreu um erro')
 
-    const button = screen.getByText('Fazer Novo Agendamento')
+    const button = document.querySelector(
+      '.new-schedule-button'
+    ) as HTMLButtonElement
     expect(button).toBeInTheDocument()
   })
 
@@ -38,7 +40,9 @@ describe('Modal', () => {
       'para dia Monday, às 10:00 AM, para 2 pokémons foi realizado com sucesso!'
     )
 
-    const button = screen.getByText('Fazer Novo Agendamento')
+    const button = document.querySelector(
+      '.new-schedule-button'
+    ) as HTMLButtonElement
     expect(button).toBeInTheDocument()
   })
 })

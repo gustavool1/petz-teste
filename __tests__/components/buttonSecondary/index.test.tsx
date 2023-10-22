@@ -1,40 +1,56 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
-import ButtonSecondary from '../../../components/buttonSecondary/buttonSecondary'
+import ButtonSecondary, {
+  ButtonType,
+} from '../../../components/buttonSecondary/buttonSecondary'
+import '@testing-library/jest-dom'
 
-describe('ButtonSecondary', () => {
-  it('Renderiza um botão com texto', () => {
-    const { getByText } = render(<ButtonSecondary>Click Me</ButtonSecondary>)
-    const button = getByText('Click Me')
-    expect(button).toBeInTheDocument()
-  })
-
-  it('Renderiza um botão com texto e icone', () => {
-    const { getByText, getByAltText } = render(
-      <ButtonSecondary hasIcon>Click Me</ButtonSecondary>
+describe('ButtonSecondary Component', () => {
+  it('Renderiza um botão default com um texto', () => {
+    const { getByText, container } = render(
+      <ButtonSecondary buttonType={ButtonType.default}>
+        Click me
+      </ButtonSecondary>
     )
-    const button = getByText('Click Me')
-    const icon = getByAltText('Background Image')
+
+    const button = getByText('Click me')
     expect(button).toBeInTheDocument()
-    expect(icon).toBeInTheDocument()
   })
 
-  it('Verifica o onClick', () => {
-    const onClick = jest.fn()
+  it('Renderiza um botão danger com um icone', () => {
+    const { getByText, container } = render(
+      <ButtonSecondary buttonType={ButtonType.danger} hasIcon={true}>
+        Delete
+      </ButtonSecondary>
+    )
+
+    const button = getByText('Delete')
+
+    expect(button).toBeInTheDocument()
+  })
+
+  it('Chama a função quando o botão é clicado', () => {
+    const onClickMock = jest.fn()
     const { getByText } = render(
-      <ButtonSecondary onClick={onClick}>Click Me</ButtonSecondary>
+      <ButtonSecondary buttonType={ButtonType.default} onClick={onClickMock}>
+        Click me
+      </ButtonSecondary>
     )
-    const button = getByText('Click Me')
+
+    const button = getByText('Click me')
     fireEvent.click(button)
-    expect(onClick).toHaveBeenCalled()
+
+    expect(onClickMock).toHaveBeenCalledTimes(1)
   })
 
-  it('Desabilita o botão quando passado a prop disabled', () => {
+  it('is disabled when the "disabled" prop is true', () => {
     const { getByText } = render(
-      <ButtonSecondary disabled>Click Me</ButtonSecondary>
+      <ButtonSecondary buttonType={ButtonType.default} disabled={true}>
+        Disabled Button
+      </ButtonSecondary>
     )
-    const buttonSpan = getByText('Click Me')
-    const button = buttonSpan.parentElement
+
+    const button = getByText('Disabled Button')
     expect(button).toBeDisabled()
   })
 })

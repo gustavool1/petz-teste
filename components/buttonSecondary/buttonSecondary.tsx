@@ -19,7 +19,11 @@ const ButtonSecondary = ({
   ...rest
 }: ButtonProps) => {
   return (
-    <ButtonContainer isDefault={buttonType == ButtonType.default} {...rest}>
+    <ButtonContainer
+      className="button-secondary"
+      isDefault={buttonType == ButtonType.default}
+      {...rest}
+    >
       {children}
     </ButtonContainer>
   )

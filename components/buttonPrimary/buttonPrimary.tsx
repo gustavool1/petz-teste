@@ -48,6 +48,7 @@ const ButtonPrimary = ({
       label={`'${label}'`}
       fontSize={fontSize}
       fontWeight={fontWeight}
+      className="button-primary"
       hasIcon={hasIcon ?? false}
       onMouseEnter={
         isLoading ? () => {} : () => setIconIsVisible(!iconIsVisible)

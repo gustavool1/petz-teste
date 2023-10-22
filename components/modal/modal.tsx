@@ -61,6 +61,7 @@ const Modal = ({
         <ButtonPrimary
           onClick={handleButtonClicked}
           label="Fazer Novo Agendamento"
+          className="new-schedule-button"
           fontSize={14}
           fontWeight={700}
         ></ButtonPrimary>

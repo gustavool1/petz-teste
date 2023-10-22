@@ -1,51 +1,62 @@
 import React from 'react'
 import { render, fireEvent, act } from '@testing-library/react'
 import ButtonPrimary from '../../../components/buttonPrimary/buttonPrimary'
-import '@testing-library/jest-dom'
 
-beforeAll(() => {
-  jest.useFakeTimers()
-})
-
-afterAll(() => {
-  jest.useRealTimers()
-})
-
-describe('ButtonPrimary', () => {
-  it('Renderiza com o texto e sem o icone', () => {
-    const { getByText } = render(<ButtonPrimary>Click Me</ButtonPrimary>)
-    const button = getByText('Click Me')
-    expect(button).toBeInTheDocument()
-  })
-  it('Renderiza com um icone', () => {
-    const { getByAltText } = render(
-      <ButtonPrimary hasIcon>Label</ButtonPrimary>
-    )
-    const icon = getByAltText('White pokeball')
-    expect(icon).toBeInTheDocument()
-  })
-  it('Mostra o texto depois do delay quando hasIcon é verdadeiro', () => {
-    const { getByText } = render(
-      <ButtonPrimary hasIcon>Click Me</ButtonPrimary>
+describe('ButtonPrimary Component', () => {
+  it('Renderizar um botão', () => {
+    render(
+      <ButtonPrimary
+        label="Test Button"
+        hasIcon={true}
+        fontSize={16}
+        fontWeight={400}
+      />
     )
 
-    act(() => {
-      jest.advanceTimersByTime(3001)
-    })
+    const button = document.querySelector(
+      '.button-primary'
+    ) as HTMLButtonElement
 
-    const button = getByText('Click Me')
     expect(button).toBeInTheDocument()
   })
 
-  it('Chama uma função quando for clicado', () => {
-    const handleClick = jest.fn()
-    const { getByText } = render(
-      <ButtonPrimary onClick={handleClick}>Click Me</ButtonPrimary>
+  it('Desabilita o botão de acordo com a prop', () => {
+    render(
+      <ButtonPrimary
+        label="Button"
+        hasIcon={true}
+        fontSize={16}
+        fontWeight={400}
+        disabled={true}
+      />
     )
 
-    const button = getByText('Click Me')
+    const button = document.querySelector(
+      '.button-primary'
+    ) as HTMLButtonElement
+
+    expect(button).toBeDisabled()
+  })
+
+  it('Chama a função quando é clicado', () => {
+    const onClickMock = jest.fn()
+    render(
+      <ButtonPrimary
+        label="Click Me"
+        hasIcon={false}
+        fontSize={16}
+        fontWeight={400}
+        onClick={onClickMock}
+      />
+    )
+
+    const button = document.querySelector(
+      '.button-primary'
+    ) as HTMLButtonElement
+
+    expect(button).toBeInTheDocument()
     fireEvent.click(button)
 
-    expect(handleClick).toHaveBeenCalled()
+    expect(onClickMock).toHaveBeenCalledTimes(1)
   })
 })

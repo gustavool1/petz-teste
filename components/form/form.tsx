@@ -19,12 +19,18 @@ export interface ModalInfos {
 }
 
 const Form = () => {
-  const [pokemonTeam, setPokemonTeam] = useState(1)
   const [modalInfos, setModalInfos] = useState<ModalInfos>({
     isShowing: false,
     type: ModalType.success,
   })
-  const { handleSubmit, onSubmit, register, errors } = useSchedule()
+  const {
+    handleSubmit,
+    onSubmit,
+    register,
+    errors,
+    pokemonTeam,
+    setPokemonTeam,
+  } = useSchedule()
 
   return (
     <Container>

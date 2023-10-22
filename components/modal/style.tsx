@@ -45,3 +45,8 @@ export const Message = styled.p`
   margin-bottom: 20px;
   padding: 0px 30px;
 `
+export const SubLink = styled.a`
+  &:visited {
+    color: var(--color-primary);
+  }
+`

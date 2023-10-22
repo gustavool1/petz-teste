@@ -15,4 +15,9 @@ export const pagesInfos: AboutPage[] = [
     description: 'Recupere seus pokémons em 5 segundos',
     title: 'Agendar Consulta',
   },
+  {
+    path: 'getSchedules',
+    description: 'Confira seus agendamentos em um rapidamente',
+    title: 'Seus Agendamentos',
+  },
 ]

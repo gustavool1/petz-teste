@@ -1,6 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
   --color-primary:#E40F0F;
@@ -13,7 +10,7 @@ body {
   margin: 0px;
 }
 
-h1, h2, h3, h4, h5, h6, p {  
+h1, h2, h3, h4, h5, h6, p,a {  
   margin: 0px;
   font-family:'Inter', sans-serif ;
 }

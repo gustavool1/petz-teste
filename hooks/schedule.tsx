@@ -4,6 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { useState } from 'react'
 import { ModalType } from '../components/modal/modal'
 import { ModalInfos } from '../components/form/form'
+import { Schedule, setSchedule } from '../helpers/scheduling'
 
 export interface FormData {
   name?: string
@@ -30,8 +31,8 @@ const scheme = yup.object().shape({
 
 export const useSchedule = () => {
   const [pokemonTeam, setPokemonTeam] = useState(1)
-
-  const addPokemonToTheTeam = () => setPokemonTeam(pokemonTeam + 1)
+  const [schedules, setSchedules] = useState<Schedule[]>([])
+  const tax = 2.1
 
   const {
     handleSubmit,
@@ -41,6 +42,23 @@ export const useSchedule = () => {
     resolver: yupResolver(scheme),
   })
 
+  const toMoney = (quantity: number): string =>
+    'R$ ' + quantity.toFixed(2).replace('.', ',')
+
+  const setNewSchedule = (formData: FormData) => {
+    const schedule: Schedule = {
+      city: formData.city ?? '',
+      date: formData.date ?? '',
+      pokemonsNames: formData.pokemons ?? [],
+      userFullName: `${formData.name} ${formData.surname}`,
+      region: formData.region ?? '',
+      time: formData.time ?? '',
+      value: toMoney(pokemonTeam * 70 + tax),
+    }
+
+    setSchedule(schedule)
+  }
+
   const onSubmit =
     (setIsShowingModal: (modalInfos: ModalInfos) => void) =>
     (data: FormData): void => {
@@ -49,7 +67,10 @@ export const useSchedule = () => {
         type: ModalType.success,
         day: data.date,
         time: data.time,
+        pokemonQuantity: pokemonTeam.toString(),
       })
+
+      setNewSchedule(data)
     }
 
   return {
@@ -58,6 +79,10 @@ export const useSchedule = () => {
     onSubmit,
     errors,
     pokemonTeam,
-    addPokemonToTheTeam,
+    setPokemonTeam,
+    tax,
+    toMoney,
+    schedules,
+    setSchedules,
   }
 }

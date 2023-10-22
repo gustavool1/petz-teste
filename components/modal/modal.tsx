@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Message, ModalTitle, Overlay } from './style'
+import { Container, Message, ModalTitle, Overlay, SubLink } from './style'
 import Image from 'next/image'
 import { ButtonPrimary } from '../components'
 
@@ -51,7 +51,8 @@ const Modal = ({
         {isSuccessModal ? (
           <Message className="success-modal-message">
             Seu agendamento para dia {day ?? ''}, às {time ?? ''}, para{' '}
-            {pokemonQuantity} pokémons foi realizado com sucesso!
+            {pokemonQuantity} pokémons foi realizado com sucesso!{' '}
+            <SubLink href="/getSchedules">Conferir Agendamentos</SubLink>
           </Message>
         ) : (
           <Message className="error-modal-message">Ocoreu um erro</Message>

@@ -8,15 +8,15 @@ import {
   TotalValueLabel,
 } from './style'
 import { ButtonPrimary } from '../../../components'
+import { useSchedule } from '../../../../hooks/schedule'
 
 interface FinancialResumeProps {
   pokemonTeam: number
 }
 
 const FinancialResume = ({ pokemonTeam }: FinancialResumeProps) => {
-  const toMoney = (quantity: number): string =>
-    'R$ ' + quantity.toFixed(2).replace('.', ',')
-  const tax = 2.1
+  const { tax, toMoney } = useSchedule()
+
   return (
     <Container>
       <Hr />

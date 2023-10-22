@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import styled from 'styled-components'
 
-export const ButtonContainer = styled.button`
+export const ButtonContainer = styled.button<{ isDefault: boolean }>`
   border-radius: 30px;
   padding: 15px;
-  background-color: white;
+  background-color: ${(props) => (props.isDefault ? 'white' : 'red')};
   text-decoration: none;
   outline: none;
   cursor: pointer;
@@ -13,18 +13,16 @@ export const ButtonContainer = styled.button`
   align-items: center;
   justify-content: center;
   border: 1px solid black;
-
   &:disabled {
     background-color: #d7d9d8;
     cursor: not-allowed;
   }
-`
 
-export const ChildrenContainer = styled.span``
-export const ImageContainer = styled.div`
-  margin-left: '10px';
-
-  @media (max-width: 768px) {
-    margin-left: 0px;
+  &::after {
+    content: ${(props) => (props.isDefault ? "'+'" : "'-'")};
+    margin-left: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    color: ${(props) => (props.isDefault ? 'black' : 'white')};
   }
 `

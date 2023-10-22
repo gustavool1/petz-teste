@@ -34,9 +34,3 @@ export const TotalValueLabel = styled.h2`
   font-size: 24px;
   font-weight: 600;
 `
-
-export const ButtonConclusion = styled.p`
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 700;
-`

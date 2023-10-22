@@ -16,17 +16,6 @@ export const CentralPokemonContainer = styled.div`
     margin-left: 2%;
   }
 `
-export const ButtonTextPokemonCenter = styled.h2`
-  font-size: 20;
-  font-weight: 600;
-  color: white;
-`
-
-export const ButtonTextSchedule = styled.h2`
-  font-size: 14px;
-  font-weight: 700;
-  color: white;
-`
 
 export const InfoContainer = styled.div`
   width: 50%;

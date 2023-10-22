@@ -23,9 +23,3 @@ export const Title = styled.h1`
     text-align: center;
   }
 `
-
-export const AddPokemon = styled.h2`
-  font-size: 12px;
-  font-weight: 600;
-  color: #1d1d1d;
-`

@@ -1,26 +1,26 @@
 import React, { ButtonHTMLAttributes, ReactNode } from 'react'
-import { ButtonContainer, ChildrenContainer, ImageContainer } from './style'
+import { ButtonContainer } from './style'
 import Image from 'next/image'
 
+export enum ButtonType {
+  default,
+  danger,
+}
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
   hasIcon?: boolean
+  buttonType: ButtonType
 }
 
-const ButtonSecondary = ({ children, hasIcon, ...rest }: ButtonProps) => {
+const ButtonSecondary = ({
+  children,
+  buttonType,
+  hasIcon,
+  ...rest
+}: ButtonProps) => {
   return (
-    <ButtonContainer {...rest}>
-      <ChildrenContainer>{children}</ChildrenContainer>
-      {hasIcon && (
-        <ImageContainer>
-          <Image
-            alt="Background Image"
-            src="/images/plus-icon.svg"
-            width={11}
-            height={19}
-          />
-        </ImageContainer>
-      )}
+    <ButtonContainer isDefault={buttonType == ButtonType.default} {...rest}>
+      {children}
     </ButtonContainer>
   )
 }

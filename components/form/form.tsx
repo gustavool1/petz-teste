@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import UserInfo from './components/userInfo/userInfo'
-import { AddPokemon, Container, FormSchedule, Title } from './style'
+import { Container, FormSchedule, Title } from './style'
 import LocationInfo from './components/location/location'
 import RegisterTeam from './components/registerTeam/registerTeam'
 import ButtonSecondary from '../buttonSecondary/buttonSecondary'
@@ -36,15 +36,9 @@ const Form = () => {
           teamQuantity={pokemonTeam}
           register={register}
           errors={errors}
+          setPokemonTeam={setPokemonTeam}
         />
-        <ButtonSecondary
-          onClick={() => setPokemonTeam(pokemonTeam + 1)}
-          hasIcon
-          type="button"
-          disabled={!(pokemonTeam <= 5)}
-        >
-          <AddPokemon>Adicionar novo pokémon ao time...</AddPokemon>
-        </ButtonSecondary>
+
         <Date register={register} errors={errors} />
         <FinancialResume pokemonTeam={pokemonTeam} />
         {modalInfos.isShowing && (

@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-  ButtonConclusion,
   Container,
   Hr,
   ItemDescription,
@@ -15,6 +14,8 @@ interface FinancialResumeProps {
 }
 
 const FinancialResume = ({ pokemonTeam }: FinancialResumeProps) => {
+  const toMoney = (quantity: number): string =>
+    'R$ ' + quantity.toFixed(2).replace('.', ',')
   const tax = 2.1
   return (
     <Container>
@@ -25,15 +26,15 @@ const FinancialResume = ({ pokemonTeam }: FinancialResumeProps) => {
       </PricesContainer>
       <PricesContainer>
         <ItemDescription>Atendimento unitário por pokémon: </ItemDescription>
-        <ItemDescription>R$ {(pokemonTeam * 70).toFixed(2)}</ItemDescription>
+        <ItemDescription>{toMoney(pokemonTeam * 70)}</ItemDescription>
       </PricesContainer>
       <PricesContainer>
         <ItemDescription>Subtotal:</ItemDescription>
-        <ItemDescription>R$ {(pokemonTeam * 70).toFixed(2)}</ItemDescription>
+        <ItemDescription>{toMoney(pokemonTeam * 70)}</ItemDescription>
       </PricesContainer>
       <PricesContainer>
         <ItemDescription>Taxa geracional*: </ItemDescription>
-        <ItemDescription>R$ {tax.toFixed(2)}</ItemDescription>
+        <ItemDescription>{toMoney(tax)}</ItemDescription>
       </PricesContainer>
       <SmallNote>
         *adicionamos uma taxa de 3%, multiplicado pelo número da geração mais
@@ -41,11 +42,15 @@ const FinancialResume = ({ pokemonTeam }: FinancialResumeProps) => {
       </SmallNote>
       <PricesContainer>
         <TotalValueLabel>
-          Valor Total: R$ {(pokemonTeam * 70 + tax).toFixed(2)}
+          Valor Total: {toMoney(pokemonTeam * 70 + tax)}
         </TotalValueLabel>
-        <ButtonPrimary className="submit-button" type="submit">
-          <ButtonConclusion>Concluir Agendamento</ButtonConclusion>
-        </ButtonPrimary>
+        <ButtonPrimary
+          label="Concluir Agendamento"
+          className="submit-button"
+          type="submit"
+          fontSize={14}
+          fontWeight={700}
+        ></ButtonPrimary>
       </PricesContainer>
     </Container>
   )

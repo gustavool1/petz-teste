@@ -2,9 +2,7 @@ import Link from 'next/link'
 
 import {
   Container,
-  ButtonTextPokemonCenter,
   CentralPokemonContainer,
-  ButtonTextSchedule,
   InfoContainer,
   WhoWeAre,
 } from './style'
@@ -18,15 +16,22 @@ const NavBar = () => {
   return (
     <Container>
       <CentralPokemonContainer>
-        <ButtonPrimary hasIcon onClick={() => {}}>
-          <ButtonTextPokemonCenter>Centro Pokémon</ButtonTextPokemonCenter>
-        </ButtonPrimary>
+        <ButtonPrimary
+          hasIcon
+          onClick={() => router.push('/')}
+          label="Centro Pokémon"
+          fontSize={20}
+          fontWeight={600}
+        ></ButtonPrimary>
       </CentralPokemonContainer>
       <InfoContainer>
         <WhoWeAre onClick={() => router.push('/about')}>Quem Somos</WhoWeAre>
-        <ButtonPrimary onClick={() => router.push('/schedule')}>
-          <ButtonTextSchedule>Agendar Consulta</ButtonTextSchedule>
-        </ButtonPrimary>
+        <ButtonPrimary
+          onClick={() => router.push('/schedule')}
+          label="Agendar Consulta"
+          fontSize={14}
+          fontWeight={700}
+        ></ButtonPrimary>
       </InfoContainer>
     </Container>
   )

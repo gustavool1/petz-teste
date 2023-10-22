@@ -23,7 +23,7 @@ export const TextField = styled.input`
   font-weight: 300;
 
   :focus {
-    border-color: red;
+    border-color: #7d7a7a;
   }
   @media screen and (min-width: 768px) {
     max-width: 268px;

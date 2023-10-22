@@ -40,3 +40,24 @@ export const PokemonSelectContainer = styled.div`
     flex-direction: column;
   }
 `
+export const AddPokemon = styled.h2`
+  font-size: 12px;
+  font-weight: 600;
+  color: #1d1d1d;
+`
+export const RemovePokemon = styled.h2`
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+`
+export const ButtonsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+`
+export const AddButtonContainer = styled.div`
+  margin-bottom: 5px;
+`
+export const RemoveButtonContainer = styled.div`
+  margin-bottom: 5px;
+`

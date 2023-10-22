@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  Container,
-  Message,
-  ModalTitle,
-  Overlay,
-  SuccessSchedule,
-} from './style'
+import { Container, Message, ModalTitle, Overlay } from './style'
 import Image from 'next/image'
 import { ButtonPrimary } from '../components'
 
@@ -31,6 +25,7 @@ const Modal = ({
 }: ModalProps) => {
   const handleButtonClicked = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation()
+    setIsShowingModal()
   }
 
   const isSuccessModal = type == ModalType.success
@@ -62,9 +57,12 @@ const Modal = ({
           <Message className="error-modal-message">Ocoreu um erro</Message>
         )}
 
-        <ButtonPrimary onClick={handleButtonClicked}>
-          <SuccessSchedule>Fazer Novo Agendamento</SuccessSchedule>
-        </ButtonPrimary>
+        <ButtonPrimary
+          onClick={handleButtonClicked}
+          label="Fazer Novo Agendamento"
+          fontSize={14}
+          fontWeight={700}
+        ></ButtonPrimary>
       </Container>
     </Overlay>
   )
